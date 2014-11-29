@@ -1,5 +1,6 @@
 def fibonacci(n):
-    """"""
+    """Return the nth value in the fibonacci series, where each value is the sum of the previous two values, beginning with 0 and 1."""
+
     if n < 1:
         raise ValueError('n must be greater than 0')
 
@@ -12,7 +13,8 @@ def fibonacci(n):
 
 
 def lucas(n):
-    """"""
+    """Return the nth value in the lucas series, where each value is the sum of the previous two values, beginning with 2 and 1."""
+
     if n < 1:
         raise ValueError('n must be greater than 0')
 
@@ -24,9 +26,15 @@ def lucas(n):
         return lucas(n-1) + lucas (n-2)
 
 def sum_series(n, first=0, second=1):
+    """Return the nth value in the sum series where each value is the sum of the previous two values.
+       
+       Keyword arguments:
+       first -- specifies the first value in the series (defaults to 0)
+       second -- specifies the second value in the series (defaults to 1)
+       """
+
     if n < 1:
         raise ValueError('n must be greater than 0')
-    #print second
     if n == 1:
         return first
     elif n == 2:
@@ -35,15 +43,47 @@ def sum_series(n, first=0, second=1):
         return sum_series(n-1, first, second) + sum_series (n-2, first, second)
 
 if __name__ == "__main__":
-    #for number in range (3,8):
-        #print fibonacci(8) # == fibonacci(3) + fibonacci(2)    
-        #print lucas(0) # == lucas(4) + lucas(3)
-        assert sum_series(6) == fibonacci(6)
-        assert sum_series(5, 2, 1) == lucas(5)
-        assert sum_series(3,first=5,second=4) == 9
-        print("all tests passed")
-#print(fibonacci(4))
-#print(lucas(4))
-#print(sum_series(4))
-#print(sum_series(4, 2, 1))
+
+    #test whether the first eight values returned by fibonacci() 
+    fibonacci_first_eight = [0,1,1,2,3,5,8,13]  
+    my_fibonacci_first_eight = []
+
+    for number in range(1,9):
+        my_fibonacci_first_eight.append(fibonacci(number))
+
+    assert fibonacci_first_eight == my_fibonacci_first_eight
+
+
+    #test whether the first eight values returned by lucas are the same as the lucas series
+    lucas_first_eight = [2,1,3,4,7,11,18,29]
+    my_lucas_first_eight = []
+
+    for number in range(1,9):
+        my_lucas_first_eight.append(lucas(number))
+
+    assert lucas_first_eight == my_lucas_first_eight
+
+
+    #test sum_series with different parameters
+    for number in range(1,9):
+        ##test whether calling sum_series() without parameters returns the same value as fibonacci(), given n
+        assert sum_series(number) == fibonacci(number)
+
+        ##test whether calling sum_series() with the parameters 2,1 returns the same value as lucas(), given n
+        assert sum_series(number, 2, 1) == lucas(number)
+
+
+    ##test whether calling sum_series() with different parameters returns the expected result
+    assert sum_series(3,first=5,second=4) == 9
+    assert sum_series(4,first=3,second=3) == 9
+    assert sum_series(5,first=6,second=7) == 33
+
+
+    print("all tests passed")
+
+
+
+
+
+
 
