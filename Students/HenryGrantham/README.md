@@ -10,4 +10,4 @@ Started with basic on 8-bit CBM PET machines back in the 80's and then graduated
 ### Why am I taking Python Foundations II
 I used a previous version of Python about ten years ago to prototype a financial application and loved its elegant style and ease of use.  Preiously, I had used C++ for most of my small projects. I am taking Python Foundations II to prepare for the Python Developer Accelorator program and I hope to change professions and get back to my passion for coding.
 
-[My New Favorite Website]:(http://www.python.org "New Favorite Website")
+http://www.python.org "New Favorite Website"
