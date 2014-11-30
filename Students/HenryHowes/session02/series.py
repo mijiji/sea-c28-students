@@ -79,7 +79,7 @@ if __name__ == "__main__":
     assert sum_series(5,first=6,second=7) == 33
 
 
-    print("all tests passed")
+    print(u"all tests passed")
 
 
 
