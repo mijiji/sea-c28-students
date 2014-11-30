@@ -46,23 +46,15 @@ if __name__ == "__main__":
 
     #test whether the first eight values returned by fibonacci() 
     fibonacci_first_eight = [0,1,1,2,3,5,8,13]  
-    my_fibonacci_first_eight = []
 
     for number in range(1,9):
-        my_fibonacci_first_eight.append(fibonacci(number))
-
-    assert fibonacci_first_eight == my_fibonacci_first_eight
-
+        assert fibonacci(number) == fibonacci_first_eight[number-1]
 
     #test whether the first eight values returned by lucas are the same as the lucas series
     lucas_first_eight = [2,1,3,4,7,11,18,29]
-    my_lucas_first_eight = []
 
     for number in range(1,9):
-        my_lucas_first_eight.append(lucas(number))
-
-    assert lucas_first_eight == my_lucas_first_eight
-
+        assert lucas(number) == lucas_first_eight[number-1]
 
     #test sum_series with different parameters
     for number in range(1,9):
