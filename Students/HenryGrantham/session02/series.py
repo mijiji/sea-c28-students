@@ -17,8 +17,6 @@ def fibonacci(n):
         return fibonacci(n-2) + fibonacci(n-1)
     else:
         return None
-print (fibonacci(3))
-print (fibonacci(4))
 
 def lucas(n):
     """Return nth number in a lucas number series
@@ -33,8 +31,6 @@ def lucas(n):
         return lucas(n-2) + lucas(n-1)
     else:
         return None
-print (lucas(3))
-print (lucas(4))
 
 def sum_series(n, a = 0, b = 1):
     """Return nth number in a sum_series series
@@ -50,5 +46,17 @@ def sum_series(n, a = 0, b = 1):
         return sum_series(n-2, a, b) + sum_series(n-1, a, b)
     else:
         return None
-print (sum_series(3))
-print (sum_series(4))
+print (sum_series(3,2,3))
+print (sum_series(4,2,3))
+
+if __name__ == "__main__":
+    assert fibonacci(-1) == None
+    assert fibonacci(0) == None
+    assert fibonacci(1) == 0
+    assert fibonacci(2) == 1
+    assert fibonacci(3) == 1
+    assert fibonacci(4) == 2
+    assert fibonacci(5) == 3
+
+
+
