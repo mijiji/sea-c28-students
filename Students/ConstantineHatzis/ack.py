@@ -10,3 +10,5 @@ def ack(m, n,):
         ack(m-1, ack(m, n-1))
     else:
         return None
+
+testValues = [[1, 2, 3, 4], [2, 3, 4, 5, 6], [3, 5, 7, 9, 11], [5, 13, 29, 61, 125]]
