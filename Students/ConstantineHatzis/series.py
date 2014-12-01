@@ -29,26 +29,30 @@ def sum_series(n, a=0, b=1):
     return result
 
 if __name__ == "__main__":
-    """This is a selection of test cases for the Fibonacci Series, Lucas
-        Numbers, and the Sum Series function."""
+    # This is a selection of test cases for the Fibonacci Series, Lucas
+    # Numbers, and the Sum Series function.
 
-    """The first eight values of the Fibonacci Series"""
+    # The first eight values of the Fibonacci Series
     test_values_fibonacci = [0, 1, 1, 2, 3, 5, 8, 13]
-    """The first eight values of the Lucas Numbers"""
+
+    # The first eight values of the Lucas Numbers
     test_values_lucas = [2, 1, 3, 4, 7, 11, 18, 29]
-    """The 5th value of the Fibonacci and Lucas Numbers, and an unknown
-        function"""
+
+    # The 5th value of the Fibonacci and Lucas Numbers, and an unknown
+    # function
     test_values_sum_series = ([[5, 0, 1, 3], [5, 2, 1, 7],
                               [5, 4, 3, "That function is not available yet"]])
 
+    # Test fibonacci() and lucas()
     for n in range(7):
         assert fibonacci(n + 1) == test_values_fibonacci[n]
         assert lucas(n + 1) == test_values_lucas[n]
 
+    # Test sum_series()
     for n in range(2):
         assert (sum_series(*test_values_sum_series[n][0:3]) ==
                 test_values_sum_series[n][3])
 
-    """If an assert fails, and exception will be thrown and this following print
-        will not executre. """
+    # If an assert fails, and exception will be thrown and this following print
+    # will not executre.
     print(u"All Tests Pass")
