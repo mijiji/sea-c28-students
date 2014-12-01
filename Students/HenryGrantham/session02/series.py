@@ -66,6 +66,24 @@ if __name__ == "__main__":
     assert lucas(4) == 4
     assert lucas(5) == 7
 
+    # testing sum_series with only one parameter will result in
+    # fibonacci series
+    assert sum_series(-1) == None
+    assert sum_series(0) == None
+    assert sum_series(1) == 0
+    assert sum_series(2) == 1
+    assert sum_series(3) == 1
+    assert sum_series(4) == 2
+    assert sum_series(5) == 3
 
+    # testing sum_series with arguments n, 2, and 1 will result in
+    # lucus numbers series
+    assert sum_series(-1,2,1) == None
+    assert sum_series(0,2,1) == None
+    assert sum_series(1,2,1) == 2
+    assert sum_series(2,2,1) == 1
+    assert sum_series(3,2,1) == 3
+    assert sum_series(4,2,1) == 4
+    assert sum_series(5,2,1) == 7
 
 
