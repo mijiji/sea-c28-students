@@ -7,7 +7,8 @@ sqrt(9)
 
 Traceback (most recent call last):
   File "<pyshell#0>", line 1, in <module>
- '''
+  
+'''
 sqrt(9)
 NameError: name 'sqrt' is not defined
 '''
