@@ -6,4 +6,7 @@ def fibonacci(n):
     a, b = 0, 1  # Initialize Fibonacci Series
     for i in range(n):
         a, b = b, a + b
+        print(b)
         return (b)
+
+fibonacci(5)
