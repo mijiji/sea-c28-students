@@ -11,4 +11,9 @@ def ack(m, n,):
     else:
         return None
 
-testValues = [[1, 2, 3, 4], [2, 3, 4, 5, 6], [3, 5, 7, 9, 11], [5, 13, 29, 61, 125]]
+if __name__ == "__main__":
+    testValues = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 5, 7, 9, 11], [5, 13, 29, 61, 125]]
+
+    for m in range(4):
+        for n in range(5):
+            assert ack(m, n) == testValues[m][n]
