@@ -13,12 +13,18 @@ def GenerateTypeError():
 def GenerateSyntaxError():
     This is a bad symbol = 1
 
+
 #This function causes an AttributeError when it is defined, not when it is called.
 def GenerateAttributeError():
-    i = 4;
-    j = i.length();
+    i = 4
+    j = i.length()
 
 GenerateNameError()
 GenerateTypeError()
 GenerateSyntaxError()
 GenerateAttributeError()
+
+
+
+
+
