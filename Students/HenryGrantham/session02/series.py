@@ -58,5 +58,14 @@ if __name__ == "__main__":
     assert fibonacci(4) == 2
     assert fibonacci(5) == 3
 
+    assert lucas(-1) == None
+    assert lucas(0) == None
+    assert lucas(1) == 2
+    assert lucas(2) == 1
+    assert lucas(3) == 3
+    assert lucas(4) == 4
+    assert lucas(5) == 7
+
+
 
 
