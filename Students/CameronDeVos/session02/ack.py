@@ -1,7 +1,12 @@
 from __future__ import print_function
 
 def ack(m, n):
-	"""Return a result of the Ackermann function based on two inputs."""
+	"""Return a result of the Ackermann function based on two inputs.
+	
+	Keyword arguments:
+	m -- nonnegative integer
+	n -- nonnegative integer
+	"""
 	# Check for negative inputs
 	if m < 0 or n < 0:
 		return None
