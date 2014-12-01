@@ -20,8 +20,25 @@ def lucas(n):
 def sum_series(n, a=0, b=1):
     """Return the nth value of a series determined by the optional arguments, a and b"""
     if a == 0 and b == 1:
-        fibonacci(n)
+        result = fibonacci(n)
     elif a == 2 and b == 1:
-        lucas(n)
+        result lucas(n)
     else:
         print(u"That function is not available yet")
+    return result
+
+
+if __name__ == "__main__":
+    test_values_fibonacci = [0, 1, 1, 2, 3, 5, 8, 13]
+    test_values_lucas = [2, 1, 3, 4, 7, 11, 18, 29]
+    test_values_sum_series = [[5, 0, 1, 3], [5, 2, 1, 7]]
+
+    for n in range(1, 8):
+        assert fibonacci(n) == test_values_fibonacci[n]
+        assert lucas(n) == test_values_lucas[n]
+
+    for n in range(1, 2):
+        assert sum_series(test_values_sum_series[n][1:3]) == test_values_sum_series[n][4]
+
+    # If an assert fails, and exception will be thrown and this following print will not executre.
+    print(u"All Tests Pass")
