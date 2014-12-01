@@ -46,8 +46,6 @@ def sum_series(n, a = 0, b = 1):
         return sum_series(n-2, a, b) + sum_series(n-1, a, b)
     else:
         return None
-print (sum_series(3,2,3))
-print (sum_series(4,2,3))
 
 if __name__ == "__main__":
     assert fibonacci(-1) == None
@@ -67,7 +65,7 @@ if __name__ == "__main__":
     assert lucas(5) == 7
 
     # testing sum_series with only one parameter will result in
-    # fibonacci series
+    # fibonacci series (1 parameter)
     assert sum_series(-1) == None
     assert sum_series(0) == None
     assert sum_series(1) == 0
@@ -77,7 +75,7 @@ if __name__ == "__main__":
     assert sum_series(5) == 3
 
     # testing sum_series with arguments n, 2, and 1 will result in
-    # lucus numbers series
+    # lucus numbers series (3 parameters)
     assert sum_series(-1,2,1) == None
     assert sum_series(0,2,1) == None
     assert sum_series(1,2,1) == 2
@@ -86,4 +84,13 @@ if __name__ == "__main__":
     assert sum_series(4,2,1) == 4
     assert sum_series(5,2,1) == 7
 
-
+    # testing sum_series with arguments n, 2, and will result in
+    # lucus numbers series because 3rd argument defaults to 1
+    # (2 parameters)
+    assert sum_series(-1,2) == None
+    assert sum_series(0,2) == None
+    assert sum_series(1,2) == 2
+    assert sum_series(2,2) == 1
+    assert sum_series(3,2) == 3
+    assert sum_series(4,2) == 4
+    assert sum_series(5,2) == 7
