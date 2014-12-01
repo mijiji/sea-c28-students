@@ -12,10 +12,6 @@ def fibonacci(n):
 def lucas(n):
     """Return the nth value of the Lucas Numbers"""
     a, b = 2, 1  # Initialize Lucas Numbers
-    print(a)
     for i in range(1, n):
         a, b = b, a + b  # Generate nth and nth + 1 value of the Lucas Numbers
-        print(a)
     return (a)
-
-lucas(5)
