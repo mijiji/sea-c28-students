@@ -35,3 +35,4 @@ Traceback (most recent call last):
     dog.upper()
 AttributeError: 'int' object has no attribute 'upper'
 >>> 
+
