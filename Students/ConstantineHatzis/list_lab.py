@@ -49,3 +49,10 @@ print(fruit)
 
 fruit.insert(0, u"Plum")  # Add a new fruit to the front of the list
 print(fruit)
+
+p_fruit = []  # Initialize list of fruit starting with P
+for x in fruit:
+    # Create list of fruit starting with P
+    if x[0] == "p" or x[0] == "P":
+        p_fruit.append(x)
+print(p_fruit)
