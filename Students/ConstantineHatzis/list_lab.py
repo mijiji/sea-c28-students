@@ -3,7 +3,6 @@
 from __future__ import print_function
 
 fruit = [u"Apples", u"Pears", u"Oranges", u"Peaches"]  # Create inital list of fruit
-
 print(fruit)
 
 
@@ -14,9 +13,7 @@ def ask_new_fruit():
     return new_fruit
 
 new_fruit = ask_new_fruit()  # Prompt user for new fruit
-
 fruit.append(new_fruit)  # Append new fruit to fruit list
-
 print(fruit)
 
 
@@ -45,5 +42,10 @@ def choose_fruit():
     return fruit_number
 
 fruit_number = choose_fruit()  # Prompt user for fruit selection
-
 print(u"Fruit # {} is {}".format(fruit_number, fruit[fruit_number-1]))
+
+fruit = [u"Pineapple"] + fruit  # Add a new fruit to the front of the list
+print(fruit)
+
+fruit.insert(0, u"Plum")  # Add a new fruit to the front of the list
+print(fruit)
