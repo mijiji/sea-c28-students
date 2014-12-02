@@ -10,6 +10,7 @@ def ask_new_fruit():
     """ Return the name of a new fruit submitted by the user """
     new_fruit = raw_input(u"Name another fruit to add to the list: ")
     new_fruit = new_fruit.decode("utf-8")
+    new_fruit = new_fruit.title()  # Force title case
     return new_fruit
 
 new_fruit = ask_new_fruit()  # Prompt user for new fruit
@@ -21,8 +22,9 @@ def choose_fruit():
     """ Return the number corresponding the fruit in the list the user has chosen on a 1-is-first basis """
     fruit_number = raw_input(u"Which fruit do you like best? (1 - {}) ".format(len(fruit)))
     fruit_number = fruit_number.decode("utf-8")
+    fruit_number = fruit_number.title()  # Force title case
 
-    if fruit_number == "QUIT":
+    if fruit_number == u"Quit":
         # Let the user exit the prompt
         quit()
     elif fruit_number.isnumeric():
@@ -52,7 +54,41 @@ print(fruit)
 
 p_fruit = []  # Initialize list of fruit starting with P
 for x in fruit:
-    # Create list of fruit starting with P
-    if x[0] == "p" or x[0] == "P":
+    # Create list of fruit starting with P or p (not case-sensitive)
+    if x[0] == u"p" or x[0] == u"P":
         p_fruit.append(x)
 print(p_fruit)
+
+# Begin second section of List Lab
+
+print(fruit)
+fruit2 = fruit[:]
+fruit2.remove(fruit2[-1])
+print(fruit2)
+
+fruit2 = fruit2 * 2
+print(fruit2)
+
+
+def ask_bad_fruit():
+    """ Return the name of a fruit that the user doesn't like and exists in the fruit list """
+    bad_fruit = raw_input(u"What fruit do you hate?")
+    bad_fruit = bad_fruit.decode("utf-8")
+    bad_fruit = bad_fruit.title()  # Force title case
+
+    if bad_fruit == u"Quit":
+        # Let the user exit the prompt
+        quit()
+    elif fruit2.count(bad_fruit) == 0:
+        # Check if the user input is in the list of fruit
+        print(u"That fruit is not in the list. Please try again")
+        bad_fruit = ask_bad_fruit()
+    else:
+        bad_fruit = bad_fruit
+    return bad_fruit
+
+bad_fruit = ask_bad_fruit()
+
+for x in range(fruit2.count(bad_fruit)):
+    fruit2.remove(bad_fruit)
+print(fruit2)
