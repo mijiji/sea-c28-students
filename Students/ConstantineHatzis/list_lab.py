@@ -2,9 +2,10 @@
 
 from __future__ import print_function
 
-# Task 1 of List LAb
+# Task 1 of List Lab
 
-fruit = [u"Apples", u"Pears", u"Oranges", u"Peaches"]  # Create inital list of fruit
+# Create inital list of fruit
+fruit = [u"Apples", u"Pears", u"Oranges", u"Peaches"]
 print(fruit)
 
 
@@ -25,7 +26,8 @@ print(fruit)
 
 
 def choose_fruit():
-    """ Return the number corresponding the fruit in the list the user has chosen on a 1-is-first basis """
+    """ Return the number corresponding the fruit in the list the user has
+        chosen on a 1-is-first basis """
     fruit_number = raw_input(u"Which fruit do you like best? (1 - {}): ".format(len(fruit)))
     fruit_number = fruit_number.decode("utf-8")
     fruit_number = fruit_number.title()  # Force title case
@@ -67,7 +69,8 @@ print(p_fruit)
 
 # Task2  of List Lab
 
-fruit2 = fruit[:] # Creat copy of fruit list so original is intact for further tasks.
+# Creat copy of fruit list so original is intact for further tasks.
+fruit2 = fruit[:]
 print(fruit2)
 fruit2.remove(fruit2[-1])
 print(fruit2)
@@ -101,7 +104,8 @@ print(fruit2)
 
 # Task 3 of List Lab
 
-fruit3 = fruit[:] # Creat copy of fruit list so original is intact for further tasks.
+# Creat copy of fruit list so original is intact for further tasks.
+fruit3 = fruit[:]
 
 
 def do_you_like(x):
