@@ -2,6 +2,8 @@
 
 from __future__ import print_function
 
+# Task 1 of List LAb
+
 fruit = [u"Apples", u"Pears", u"Oranges", u"Peaches"]  # Create inital list of fruit
 print(fruit)
 
@@ -11,6 +13,10 @@ def ask_new_fruit():
     new_fruit = raw_input(u"Name another fruit to add to the list: ")
     new_fruit = new_fruit.decode("utf-8")
     new_fruit = new_fruit.title()  # Force title case
+
+    if new_fruit == u"Quit":
+        # Let the user exit the prompt
+        quit()
     return new_fruit
 
 new_fruit = ask_new_fruit()  # Prompt user for new fruit
@@ -20,7 +26,7 @@ print(fruit)
 
 def choose_fruit():
     """ Return the number corresponding the fruit in the list the user has chosen on a 1-is-first basis """
-    fruit_number = raw_input(u"Which fruit do you like best? (1 - {}) ".format(len(fruit)))
+    fruit_number = raw_input(u"Which fruit do you like best? (1 - {}): ".format(len(fruit)))
     fruit_number = fruit_number.decode("utf-8")
     fruit_number = fruit_number.title()  # Force title case
 
@@ -59,20 +65,19 @@ for x in fruit:
         p_fruit.append(x)
 print(p_fruit)
 
-# Begin second section of List Lab
+# Task2  of List Lab
 
-print(fruit)
-fruit2 = fruit[:]
+fruit2 = fruit[:] # Creat copy of fruit list so original is intact for further tasks.
+print(fruit2)
 fruit2.remove(fruit2[-1])
 print(fruit2)
 
 fruit2 = fruit2 * 2
-print(fruit2)
 
 
 def ask_bad_fruit():
     """ Return the name of a fruit that the user doesn't like and exists in the fruit list """
-    bad_fruit = raw_input(u"What fruit do you hate?")
+    bad_fruit = raw_input(u"What fruit do you hate?: ")
     bad_fruit = bad_fruit.decode("utf-8")
     bad_fruit = bad_fruit.title()  # Force title case
 
@@ -90,5 +95,41 @@ def ask_bad_fruit():
 bad_fruit = ask_bad_fruit()
 
 for x in range(fruit2.count(bad_fruit)):
+    # Run the remove command for every instance of the unwanted fruit
     fruit2.remove(bad_fruit)
 print(fruit2)
+
+# Task 3 of List Lab
+
+fruit3 = fruit[:] # Creat copy of fruit list so original is intact for further tasks.
+
+
+def do_you_like(x):
+    """ Return a yes or no user input with regards to the user liking a fruit """
+    yes_no = raw_input(u"Do you like {}, yes or no?: ".format(x))
+    yes_no = yes_no.decode("utf-8")
+    yes_no = yes_no.title()  # Force title case
+
+    if yes_no == u"Quit":
+        # Let the user exit the prompt
+        quit()
+    elif yes_no == u"Yes" or yes_no == u"No":
+        yes_no = yes_no
+    else:
+        print(u"That is not a yes or no answer. Please try again.")
+        yes_no = do_you_like(x)
+    return yes_no
+
+
+def best_fruit():
+    """ Return the list of fruit without the fruit the user doesn't like """
+    fruit_ref = fruit3[:]  # Reference array of fruits
+    for x in fruit_ref:
+        # Ask user if they like each fruit
+        yes_no = do_you_like(x)
+        if yes_no == u"No":
+            fruit3.remove(x)
+    return fruit3
+
+fruit3 = best_fruit()
+print(fruit3)
