@@ -133,3 +133,15 @@ def best_fruit():
 
 fruit3 = best_fruit()
 print(fruit3)
+
+# Task 4 of List Lab
+
+fruit4 = fruit[:]
+
+for x in range(fruit4.__len__()):
+    # Reverse the letters in each item of the fruit list
+    fruit4[x] = fruit4[x][::-1]
+
+fruit.remove(fruit[-1])  # Remove the last item in the fruit list
+print(fruit)
+print(fruit4)
