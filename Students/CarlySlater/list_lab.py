@@ -71,8 +71,32 @@ print ""
 for i in fruit:
     print i
 
+print ""
+print ""
 
+#PART 3 of the ASSIGNMENT:
 
+print "And now, Part 3:"
+print ""
+print ""
 
+for i in fruit:
+    question = "Do you like %s ?    " %i
+    answer = raw_input(question)
+    if answer == "yes":
+        pass
+    elif answer == "no":
+        fruit.remove(i)
+#if no makes it go to the next instance: how do I keep it from doing that???????   sigh.  
+        pass
+    else:
+        answer = raw_input("Please answer 'yes' or 'no ")
+
+print ""
+for i in fruit:
+    print i
+
+print ""
+print ""
 
 
