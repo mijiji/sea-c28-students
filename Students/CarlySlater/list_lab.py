@@ -38,8 +38,39 @@ print ""
 
 #PART 2 of the ASSIGNMENT:
 
-print "Part 2"
+print "And now, Part 2:"
+print ""
+print ""
 # this is to differentiate the parts of the assignment while running it
+
+for i in fruit:
+    print i
+
+print ""
+print ""
+
+
+print u'If we remove the last fruit from list, our list looks like this:'
+
+fruit.pop(-1)
+#remove the last fruit from the list
+print ""
+
+for i in fruit:
+    print i
+
+print ""
+print ""
+
+badfruit = (raw_input(u'Type the name of a fruit on this list that you\'d like to remove:     ')) 
+if badfruit in fruit:
+    fruit.remove(badfruit)
+print ""
+print "VOILA!! the fruit you removed is gone."
+print ""
+for i in fruit:
+    print i
+
 
 
 
