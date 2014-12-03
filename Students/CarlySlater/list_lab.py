@@ -24,11 +24,17 @@ print ""
 fruit.insert(0, u'pomelo')
 for i in fruit:
     print i
+print ""
+print u'all the fruits that begin with the Letter P:    '
+print ""
 
 #display all fruits beginning with P:
 for i in fruit: 
-    if 'p' in i
-    print i
+    if u'p' == i[0] : 
+        print i
+print ""
+print ""
+print ""
 
 #PART 2 of the ASSIGNMENT:
 
