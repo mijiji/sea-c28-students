@@ -23,7 +23,7 @@ print(plain_text)
 
 
 def rot13(text, table):
-    """ Encryption via the translate method for strings"""
+    """ Encryption via the translate method for strings. """
     encrypted_text = text.translate(table13)
     return encrypted_text
 

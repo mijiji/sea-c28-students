@@ -10,7 +10,7 @@ print(fruit)
 
 
 def ask_new_fruit():
-    """ Return the name of a new fruit submitted by the user """
+    """ Return the name of a new fruit submitted by the user. """
     new_fruit = raw_input(u"Name another fruit to add to the list: ")
     new_fruit = new_fruit.decode("utf-8")
     new_fruit = new_fruit.title()  # Force title case
@@ -27,7 +27,7 @@ print(fruit)
 
 def choose_fruit():
     """ Return the number corresponding the fruit in the list the user has
-        chosen on a 1-is-first basis """
+        chosen on a 1-is-first basis. """
     fruit_number = raw_input(u"Which fruit do you like best? (1 - {}): ".format(len(fruit)))
     fruit_number = fruit_number.decode("utf-8")
     fruit_number = fruit_number.title()  # Force title case
@@ -79,7 +79,7 @@ fruit2 = fruit2 * 2
 
 
 def ask_bad_fruit():
-    """ Return the name of a fruit that the user doesn't like and exists in the fruit list """
+    """ Return the name of a fruit that the user doesn't like and exists in the fruit list. """
     bad_fruit = raw_input(u"What fruit do you hate?: ")
     bad_fruit = bad_fruit.decode("utf-8")
     bad_fruit = bad_fruit.title()  # Force title case
@@ -109,7 +109,7 @@ fruit3 = fruit[:]
 
 
 def do_you_like(x):
-    """ Return a yes or no user input with regards to the user liking a fruit """
+    """ Return a yes or no user input with regards to the user liking a fruit. """
     yes_no = raw_input(u"Do you like {}, yes or no?: ".format(x))
     yes_no = yes_no.decode("utf-8")
     yes_no = yes_no.title()  # Force title case
@@ -126,7 +126,7 @@ def do_you_like(x):
 
 
 def best_fruit():
-    """ Return the list of fruit without the fruit the user doesn't like """
+    """ Return the list of fruit without the fruit the user doesn't like. """
     fruit_ref = fruit3[:]  # Reference array of fruits
     for x in fruit_ref:
         # Ask user if they like each fruit
