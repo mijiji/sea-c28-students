@@ -28,7 +28,8 @@ print(fruit)
 def choose_fruit():
     """ Return the number corresponding the fruit in the list the user has
         chosen on a 1-is-first basis. """
-    fruit_number = raw_input(u"Which fruit do you like best? (1 - {}): ".format(len(fruit)))
+    fruit_number = (raw_input(u"Which fruit do you like best? (1 - {}): "
+                    .format(len(fruit))))
     fruit_number = fruit_number.decode("utf-8")
     fruit_number = fruit_number.title()  # Force title case
 
@@ -43,7 +44,7 @@ def choose_fruit():
             fruit_number = fruit_number
         else:
             # Prompt for user input if the previous input was out of range
-            print(u"You chose a number that is out of the range of the list. Please try again.")
+            print(u"You chose an out of range number. Please try again.")
             fruit_number = choose_fruit()
     else:
         # Prompt user for input if the previous input was not a number.
@@ -79,7 +80,8 @@ fruit2 = fruit2 * 2
 
 
 def ask_bad_fruit():
-    """ Return the name of a fruit that the user doesn't like and exists in the fruit list. """
+    """ Return the name of a fruit that the user doesn't like and exists in the
+        fruit list. """
     bad_fruit = raw_input(u"What fruit do you hate?: ")
     bad_fruit = bad_fruit.decode("utf-8")
     bad_fruit = bad_fruit.title()  # Force title case
@@ -109,7 +111,7 @@ fruit3 = fruit[:]
 
 
 def do_you_like(x):
-    """ Return a yes or no user input with regards to the user liking a fruit. """
+    """ Return a yes or no user input. """
     yes_no = raw_input(u"Do you like {}, yes or no?: ".format(x))
     yes_no = yes_no.decode("utf-8")
     yes_no = yes_no.title()  # Force title case
