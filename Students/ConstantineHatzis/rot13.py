@@ -29,3 +29,14 @@ def rot13(text, table):
 
 encrypted_text = rot13(plain_text, table13)
 print(encrypted_text)
+
+if __name__ == '__main__':
+
+    # Test case 1: Does it properly encrypt the alphabet?
+    assert rot13(alphabet, table13) == key13
+
+    # Test case 2: Does it ignore punctuation adn white space?
+    punc = u"~!@#$%^& * ()_+`-={}|[]\:'<>?,./"
+    assert rot13(punc, table13) == punc
+
+    print(u"All tests passed.")
