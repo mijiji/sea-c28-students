@@ -80,17 +80,17 @@ print "And now, Part 3:"
 print ""
 print ""
 
-for i in fruit:
-    question = "Do you like %s ?    " %i
+
+for i in fruit[:]: 
+    question = "Do you like %s ?    " %i 
     answer = raw_input(question)
-    if answer == "yes":
-        pass
-    elif answer == "no":
+    while answer != "yes" and answer != "no":
+        answer = raw_input("Please answer 'yes' or 'no' ") 
+    if answer == "no":
         fruit.remove(i)
-#if no makes it go to the next instance: how do I keep it from doing that???????   sigh.  
-        pass
     else:
-        answer = raw_input("Please answer 'yes' or 'no ")
+        continue
+
 
 print ""
 for i in fruit:
