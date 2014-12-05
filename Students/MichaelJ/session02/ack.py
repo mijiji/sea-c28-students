@@ -30,4 +30,4 @@ if __name__ == "__main__":
     assert A(-1, -1) is None
     assert A(0, -1) is None
 
-    print u"all tests passed"
+    print(u"all tests passed")
