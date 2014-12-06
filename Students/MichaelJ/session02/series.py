@@ -27,3 +27,4 @@ def lucas(n):
     # seconf value of lucas series is different
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
+
