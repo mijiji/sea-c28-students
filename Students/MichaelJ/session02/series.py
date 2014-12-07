@@ -58,3 +58,11 @@ if __name__ == "__main__":
     assert fibonacci(3) == 2
     assert fibonacci(4) == 3
     assert fibonacci(5) == 5
+    # makes sure that fibonacci works
+
+    assert lucas(-5) is None
+    assert lucas(0) == 2
+    assert lucas(1) == 1
+    assert lucas(2) == 3
+    assert lucas(3) == 4
+    # makes sure lucas works
