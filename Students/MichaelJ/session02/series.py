@@ -66,3 +66,14 @@ if __name__ == "__main__":
     assert lucas(2) == 3
     assert lucas(3) == 4
     # makes sure lucas works
+    assert sum_series(-5) is None
+    assert sum_series(0) == 1
+    assert sum_series(1) == 1
+    assert sum_series(2) == 2
+    assert sum_series(3) == 3
+
+    assert sum_series(-5, 2, 1) is None
+    assert sum_series(0, 2, 1) == 2
+    assert sum_series(1, 2, 1) == 1
+    assert sum_series(2, 2, 1) == 3
+    assert sum_series(3, 2, 1) == 4
