@@ -29,7 +29,7 @@ def lucas(n):
     elif n == 1:
         return 1
     else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
+        return lucas(n - 1) + lucas(n - 2)
 
 
 def sum_series(n, n0=0, n1=1):
@@ -67,13 +67,15 @@ if __name__ == "__main__":
     assert lucas(3) == 4
     # makes sure lucas works
     assert sum_series(-5) is None
-    assert sum_series(0) == 1
+    assert sum_series(0) == 0
     assert sum_series(1) == 1
-    assert sum_series(2) == 2
-    assert sum_series(3) == 3
+    assert sum_series(2) == 1
+    assert sum_series(3) == 2
 
     assert sum_series(-5, 2, 1) is None
     assert sum_series(0, 2, 1) == 2
     assert sum_series(1, 2, 1) == 1
     assert sum_series(2, 2, 1) == 3
     assert sum_series(3, 2, 1) == 4
+
+    print "all tests pass"
