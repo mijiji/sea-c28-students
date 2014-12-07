@@ -1,30 +1,43 @@
-# defining multiple mathematical series
-# fibonacci series and lucas numbers
+"""
+defining multiple mathematical series
+fibonacci series and lucas numbers
+"""
 
 
 def fibonacci(n):
+
+    """computes the fibonacci sequence"""
+
     if n < 0:
         return None
-    # there is no negative values for n
     elif n == 0:
         return 0
-    # first value of the series
     elif n == 1:
         return 1
-    # second value of the series
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
-    # any other value is the sum of 2 previous sums
+
 
 def lucas(n):
+
+    """computes the lucas series"""
+
     if n < 0:
         return None
     elif n == 0:
-    # first value of lucas series is different
         return 2
     elif n == 1:
         return 1
-    # seconf value of lucas series is different
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
+
+def sum_series(n, n0=0, n1=1):
+    if n < 0:
+        return None
+    if n == 0:
+        return n0
+    elif n == 1:
+        return n1
+    else:
+        return sum_series(n-1, n0, n1) + sum_series(n-2, n0, n1)
