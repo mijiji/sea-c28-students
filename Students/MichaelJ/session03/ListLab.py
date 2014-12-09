@@ -42,12 +42,14 @@ print list2
 
 # part 3
 list3 = list[:]
+
 for fruit in list3:
     like = raw_input(u"Do you like %s? " % fruit)
-    if "yes":
+    if like == "no":
+        while fruit in list3:
+            list3.remove(fruit)
+    elif like == "yes":
         pass
-    elif "no":
-        list3.remove(fruit)
     else:
         print "only yes or no"
 print list3
@@ -56,4 +58,4 @@ list4 = []
 for fruit in list:
     list4.append(fruit[::-1])
 
-print  list4
+print list4
