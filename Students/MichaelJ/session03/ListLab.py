@@ -52,3 +52,8 @@ for fruit in list3:
         print "only yes or no"
 print list3
 
+list4 = []
+for fruit in list:
+    list4.append(fruit[::-1])
+
+print  list4
