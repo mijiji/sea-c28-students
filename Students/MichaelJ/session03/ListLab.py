@@ -14,15 +14,28 @@ print list
 
 pick = int(raw_input(u"give a number for that spot's fruit "))
 
-print u"%f is in spot %p"%(list(pick - 1, pick))
+print u"%f is in spot %p "%list(pick - 1), pick
 
 print list
 
-list.inser("Durian", 0)
+list.insert("Durian", 0)
 
 print list
 
 print "fruits that start with P"
 for fruit in list:
     if fruit[0] == "P"
-        print fruit
+    print fruit
+
+# part 2
+list2 = list
+list2.remove(Durian)
+
+print list2
+
+vaporize = raw_input("Which fruit do you want to remove? ")
+
+list2.remove(vaporize)
+
+# part 3
+list3 = list
