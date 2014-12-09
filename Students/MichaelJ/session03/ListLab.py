@@ -59,3 +59,6 @@ for fruit in list:
     list4.append(fruit[::-1])
 
 print list4
+
+list.remove[4]
+print list
