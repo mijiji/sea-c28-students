@@ -19,3 +19,7 @@ def rot13(message):
     encrypt = []
     for letter in message:
         if letter in string.ascii_uppercase:
+            b = A + ((ord(b) - A + 13) % 26)
+        elif letter in string.ascii_lowercase:
+            b = a + ((ord(b) - a + 13) % 26)
+        else b = ord(letter)
