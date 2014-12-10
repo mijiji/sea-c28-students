@@ -1,7 +1,8 @@
 from __future__ import print_function  # For Python 3 compatibility
+import string
 
 # Refernce alphabet
-alphabet = u"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+alphabet = unicode(string.ascii_letters)
 
 # Encrypted alphabet
 key13 = u"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"
@@ -11,31 +12,31 @@ key13 = u"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"
 # unicode characters are used. A dictionary had to be made manually.
 
 table13 = {}  # Initialize translation table
-for i in range(len(alphabet)):
+for i, item in enumerate(alphabet):
     # Generate translation table
-    table13.update({ord(alphabet[i]): key13[i]})
+    table13[ord(item)] = key13[i]
 
-# Example text
-plain_text = u"""For instance, on the planet Earth, man had always assumed that
+# Encryption via str.translate()
+
+
+def rot13(text, table):
+    """ Encryption via the translate method for strings. """
+    return text.translate(table13)
+
+if __name__ == '__main__':
+
+    # Example text
+    plain_text = u"""For instance, on the planet Earth, man had always assumed that
     the was more intelligent than dolphins because he had achieved so much -
     the wheel, New York, wars and so on - whilst all the dolphins had ever done
     was muck about in the water having a good time. But conversely, the
     dolphins had always believed that they were far more intelligent than man -
     for precisely the same reasons."""
 
-# Encryption via str.translate()
-print(plain_text)
+    print(plain_text, end="\n\n")
 
-
-def rot13(text, table):
-    """ Encryption via the translate method for strings. """
-    encrypted_text = text.translate(table13)
-    return encrypted_text
-
-encrypted_text = rot13(plain_text, table13)
-print(encrypted_text)
-
-if __name__ == '__main__':
+    encrypted_text = rot13(plain_text, table13)
+    print(encrypted_text, end="\n\n")
 
     # Test case 1: Does it properly encrypt the alphabet?
     assert rot13(alphabet, table13) == key13
