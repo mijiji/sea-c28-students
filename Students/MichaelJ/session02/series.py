@@ -1,6 +1,11 @@
 """
-defining multiple mathematical series
-fibonacci series and lucas numbers
+Computes fibonacci and lucas numbers.
+
+Fibonacci series and lucas numbers
+
+This program is to compute the fibonacci series and the lucas numbers.
+It will also make a function that is the base of both functions. They
+will work in any way.
 """
 
 
