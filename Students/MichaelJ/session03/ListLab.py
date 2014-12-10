@@ -1,7 +1,13 @@
-'''
+"""
+Using the lists to play with fruits
+
 list lab
-part 1
-'''
+
+List lab homework.
+Different sections of the homework divided into parts.
+The fruits will be meddled with.
+"""
+
 list_ = ["Apples", "Pears", "Oranges", "Peaches"]
 
 print list_
