@@ -19,8 +19,7 @@ food_prefs = {
 
 b = food_prefs
 
-print u"{name} is from {city}, and he likes {cake} cake,
-{fruit} fruit, {salad} salad, and {pasta} pasta}"
+print u"{name} is from {city}, and he likes {cake} cake, {fruit} fruit, {salad} salad, and {pasta} pasta}"
 
 # part 2
 numb = range(16)
@@ -35,7 +34,7 @@ print hexa_dict
 
 # part 4
 new_dict = {}
-for key,   bam in b.items():
+for key, bam in b.items():
     new_dict[key] = bam.count(u'a')
 
 print new_dict
@@ -45,14 +44,12 @@ s2 = set()
 s3 = set()
 s4 = set()
 
-for x in range(21):
-    if x % 2 == 0:
-        s2.add(x)
-    if x % 3 == 0:
-        s3.add(x)
-    if x % 4 == 0:
-        s4.add(x)
+s2 = {x for x in range(21) if x % 2 == 0}
+s3 = {x for x in range(21) if x % 3 == 0}
+s4 = {x for x in range(21) if x % 4 == 0}
 
 print s2
 print s3
 print s4
+
+s2, s3, s4 = [{x for x in range (21) if x % y == 0} for y in range(2, 5)]
