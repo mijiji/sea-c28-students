@@ -34,7 +34,7 @@ if __name__ == "__main__":
     assert the_list[0](0) == 0
     assert the_list[0](1) == 1
     assert the_list[1](0) == 1
-    assert the_list[1](1) == 1
+    assert the_list[1](1) == 2
     assert the_list[2](2) == 4
 
     print("all tests pass")
