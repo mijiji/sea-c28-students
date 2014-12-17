@@ -14,7 +14,15 @@ import sys
 filename = sys.argv[1]
 
 
-def cleaneer(original, new):
+def cleaner(original, new):
     x = io.open(original).readlines()
     y = map(string.strip, x)
+    newfile = io.open(new, 'whitespaceremoved')
+    for text in y:
+        newfile.write(text + "\n")
 
+
+def cleaner2(original, new):
+    x = io.open(original).readlines()
+    y = [text.strip() + "\n" for text in x]
+    io.open(new, "whitespaceremoved").writelines(y)
