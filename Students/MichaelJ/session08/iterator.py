@@ -54,8 +54,16 @@ if __name__ == "__main__":
     print("first version")
     it = IterateMe_2(1, 5, 1)
     for i in it:
-        if i > 3:
+        if i > 2:
             break
-        print i
+        print(i)
     for i in it:
-        print i
+        print(i)
+
+    xran = xrange(5)
+    for i in xran:
+        if i > 2:
+            break
+        print(i)
+    for i in xran:
+        print(i)
