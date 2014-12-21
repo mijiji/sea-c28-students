@@ -9,6 +9,9 @@ Can be used for presentation.
 
 
 class Element(object):
+    tag = "html"
+    indent = "  "
+
     def __init__(self, text=None, **kwargs):
         if not text:
             self.new = []
@@ -16,13 +19,31 @@ class Element(object):
             self.new = [text]
         self.attributes = kwargs
 
-    def render(self):
-        opening_tag = "<>"
-        closing_tag = "</>"
+    def append(self, element):
+        self.additions.append(element)
 
-    def render(self):
-        all_out = [self.opening_tag] + self + [self.closing_tag]
-        print "\n".join(all_out)
+    def render(self, file_out, ind=""):
 
-    def append(self, Element):
+        file_out.write("\n")
+        file_out.write(ind)
+        file_out.write("<%s>"%self.tag
+        for content in self.info:
+            content.render(file_out, ind + self.indent)
 
+
+class Html
+
+class Head(Element):
+    tag "head"
+
+class Body(Element):
+    tag "body"
+
+class P(Element):
+    tag "p"
+
+class OneLineTag(Element):
+    def render(self, file_out, ind=""):
+        file_out.write("\n")
+        file_out.write(ind)
+        file_out.write("</%s>"%self.tag)
