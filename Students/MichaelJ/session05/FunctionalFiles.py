@@ -11,7 +11,7 @@ from each file.
 import string
 import io
 import sys
-filename = sys.argv[1]
+filename = sys.argv[0]
 
 
 error = """Provide file to have white space removed.
