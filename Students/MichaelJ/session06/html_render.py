@@ -22,17 +22,27 @@ class Element(object):
     def append(self, element):
         self.additions.append(element)
 
-    def render(self, file_out, ind=""):
-
-        file_out.write("\n")
-        file_out.write(ind)
-        file_out.write("<%s>"%self.tag
-        for key, value in self.attributes.items():
-            file_out.write(' %s="%s" '%(key, value))
+    def render(self, file_out, ind="    "):
+        attributes = ''
+        for (key, value) in self.attributes.items():
+            attributes += (' {key} = "{value}"'.format(key = key, value = value))
+        file_out.write(u'\n%s<%s%s>\n' % (ind, self.tag, attributes))
+        for item in self.content:
+            try:
+                item.render(file_out, ind + self.indent)
+            except AttributeError:
+                file_out.write(self.indent + ind)
+                file_out.write(item)
+        file_out.write(u'\n%s</%s>' % (ind, self.tag))
 
 
 class Html(Element):
     tag = "head"
+
+    def render(self, file_out, ind=u""):
+        print("hmtl")
+        file_out.write(u"<!DOCTYPE html>")
+        Element.render(self, file_out)
 
 
 class Head(Element):
@@ -40,7 +50,7 @@ class Head(Element):
 
 
 class Body(Element):
-    tag ="body"
+    tag = "body"
 
 
 class P(Element):
@@ -48,15 +58,37 @@ class P(Element):
 
 
 class OneLineTag(Element):
-    def render(self, file_out, ind=""):
-        file_out.write("%s<%s> %s </%s>\n" % (ind, self.tag, self.content[0], self.tag_name)
+    def render(self, file_out, ind="    "):
+        attributes = '  '
+        for (key,value) in self.attributes.items():
+            attributes += (' {key} = "{value}"'.format(key = key, value = value))
+        file_out.write(u'\n%s<%s%s>\n' % (ind, self.tag, attributes))
+        for item in self.content:
+            try:
+                item.render(file_out, ind + self.indent)
+            except AttributeError:
+                file_out.write(self.indent + ind)
+                file_out.write(unicode(item))
+        file_out.write(u'\n%s</%s>' % (ind, self.tag))
 
 
 class SelfClosingTag(Element):
-    def render(self, file_out, ind=""):
-        if self.content:
-            file_out.write("5s<5s<5s 5s/>\n") %(ind, self.tag_name,self.content[0]))
-        else file_out.write("%s<%s /n") % (ind, self.tag_name))
+    def __init__(self, **attributes):
+        self.attributes = attributes
+
+    def render(self, file_out, ind = "    "):
+        attributes = ''
+        for (key, value) in self.attributes.items():
+            attributes += (' {key} = "{value}"'.format(key = key, value = value))
+        file_out.write(u'\n%s<%s%s>\n' % (ind, self.tag, attributes))
+
+
+class Hr(SelfClosingTag):
+    tag = "hr"
+
+
+class Title(OneLineTag):
+    tag = "title"
 
 
 class A(Element):
@@ -67,9 +99,20 @@ class A(Element):
         else.content = []
 
 
+class H(OneLineTag):
+    def __init__(self, level, content, **attributes):
+        OneLineTag.__init__(self, content, **attributes)
+
+        self.tag = u"h%i"%level
+
+
 class Ul(Element):
     tag = "ul"
 
 
 class Li(Element):
     tag = "Li"
+
+
+class Meta(SelfClosingTag):
+    tag = "meta"
