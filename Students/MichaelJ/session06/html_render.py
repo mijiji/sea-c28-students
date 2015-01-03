@@ -96,7 +96,8 @@ class A(Element):
         self.link = link
         if content:
             self.content = [content]
-        else.content = []
+        else:
+            content = []
 
 
 class H(OneLineTag):
